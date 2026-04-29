@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valle San Cayetano | Lotes con Alta Valorización cerca de Cúcuta</title>
+<meta name="description" content="Invierte en tu futuro en Valle San Cayetano. Lotes para vivienda y cabañas a solo 12 km de Cúcuta con alta valorización, servicios completos y escrituras al día.">
+<meta name="keywords" content="lotes San Cayetano, terrenos Cúcuta, inversión inmobiliaria, lotes cabañas, lotes vivienda Norte de Santander">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ========================================
+   VALLE SAN CAYETANO — Estilos principales
+   ======================================== */
+
+/* ── VARIABLES ── */
+:root {
+  --forest: #1a3325;
+  --forest-mid: #254d38;
+  --forest-light: #2f6147;
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --gold-pale: #f5e9c8;
+  --cream: #faf8f3;
+  --white: #ffffff;
+  --charcoal: #1c1c1c;
+  --muted: #6b7280;
+  --border: rgba(201,168,76,0.2);
+}
+
+/* ── RESET ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--forest); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+  background: rgba(26,51,37,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  transition: all 0.3s;
+}
+nav.scrolled {
+  height: 60px;
+  background: rgba(26,51,37,0.99);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-emblem {
+  width: 38px; height: 38px;
+  background: var(--gold);
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 600; color: var(--forest);
+}
+.logo-text { line-height: 1.1; }
+.logo-text strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 600;
+  color: var(--gold-light); letter-spacing: 0.04em;
+}
+.logo-text span { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.15em; text-transform: uppercase; }
+
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 13px; font-weight: 400;
+  color: rgba(255,255,255,0.75); letter-spacing: 0.08em; text-transform: uppercase;
+  position: relative; padding-bottom: 4px;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--gold); color: var(--forest) !important;
+  padding: 9px 22px !important; border-radius: 2px;
+  font-weight: 600 !important; letter-spacing: 0.05em !important;
+  transition: background 0.3s !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; }
+.nav-cta::after { display: none !important; }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none; position: fixed; top: 72px; left: 0; width: 100%; z-index: 999;
+  background: rgba(26,51,37,0.98); backdrop-filter: blur(20px);
+  padding: 24px 5%; flex-direction: column; gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  text-decoration: none; color: rgba(255,255,255,0.8); font-size: 15px;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+
+/* ── HERO ── */
+#hero { min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(26,51,37,0.88) 0%, rgba(26,51,37,0.6) 50%, rgba(0,0,0,0.4) 100%),
+    url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1800&q=80') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+}
+.hero-grid {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image: linear-gradient(rgba(201,168,76,0.5) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(201,168,76,0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 800px; padding: 120px 8% 80px;
+  animation: fadeUp 1s ease both;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35);
+  color: var(--gold-light); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 100px; margin-bottom: 28px;
+}
+.hero-tag i { font-size: 10px; }
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 500; line-height: 1.1;
+  color: var(--white); margin-bottom: 20px; letter-spacing: -0.01em;
+}
+h1 em { color: var(--gold-light); font-style: italic; }
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 300;
+  color: rgba(255,255,255,0.75); line-height: 1.7;
+  max-width: 540px; margin-bottom: 44px;
+}
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: var(--forest);
+  padding: 16px 32px; border-radius: 2px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.05em;
+  text-decoration: none; text-transform: uppercase;
+  transition: all 0.3s; box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+}
+.btn-primary:hover {
+  background: var(--gold-light); transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.5);
+}
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; color: var(--white);
+  padding: 16px 32px; border-radius: 2px;
+  font-size: 14px; font-weight: 400; letter-spacing: 0.05em;
+  text-decoration: none; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.hero-stats {
+  position: absolute; bottom: 48px; right: 8%;
+  display: flex; gap: 48px;
+  animation: fadeUp 1s 0.4s ease both;
+}
+.stat { text-align: right; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 300; color: var(--gold-light); line-height: 1;
+}
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+.hero-scroll {
+  position: absolute; bottom: 56px; left: 8%;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: fadeUp 1s 0.6s ease both;
+}
+.scroll-line {
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s infinite;
+}
+.scroll-text { font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.4); text-transform: uppercase; writing-mode: vertical-rl; }
+
+/* ── SECCIONES COMUNES ── */
+section { padding: 100px 8%; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--gold); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;
+}
+.section-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 500; line-height: 1.2; letter-spacing: -0.01em;
+}
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── NOSOTROS ── */
+#nosotros { background: var(--white); }
+.nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.nosotros-visual { position: relative; }
+.nosotros-img {
+  width: 100%; height: 480px; object-fit: cover; border-radius: 2px; display: block;
+  background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80') center/cover;
+}
+.nosotros-badge {
+  position: absolute; bottom: -24px; right: -24px;
+  background: var(--forest); padding: 28px;
+  border-radius: 2px; border: 1px solid var(--border); text-align: center;
+}
+.nosotros-badge strong {
+  display: block; font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; color: var(--gold); font-weight: 300;
+}
+.nosotros-badge span { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.12em; text-transform: uppercase; }
+.nosotros-text h2 { color: var(--forest); margin-bottom: 24px; }
+.nosotros-text p { color: var(--muted); line-height: 1.9; font-size: 15px; margin-bottom: 20px; }
+.nosotros-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.feat { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--forest); font-weight: 500; }
+.feat i { color: var(--gold); font-size: 14px; }
+
+/* ── PROYECTOS ── */
+#proyectos { background: var(--forest); position: relative; overflow: hidden; }
+#proyectos::before {
+  content: 'VALLE';
+  position: absolute; right: -2%; top: 50%; transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18vw; font-weight: 300;
+  color: rgba(255,255,255,0.03); pointer-events: none; line-height: 1;
+}
+.proyectos-inner { position: relative; z-index: 1; }
+.proyectos-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 60px; flex-wrap: wrap; }
+.proyectos-header h2 { color: var(--white); max-width: 480px; }
+.proyectos-header p { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.8; max-width: 360px; }
+.proy-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2px; border-radius: 2px; overflow: hidden; height: 460px; }
+.proy-card { position: relative; overflow: hidden; cursor: pointer; background: var(--forest-mid); }
+.proy-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+.proy-card:hover img { transform: scale(1.06); }
+.proy-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,51,37,0.95) 0%, rgba(26,51,37,0.2) 60%, transparent 100%);
+  padding: 28px; display: flex; flex-direction: column; justify-content: flex-end;
+  transition: background 0.4s;
+}
+.proy-card:hover .proy-overlay { background: linear-gradient(to top, rgba(26,51,37,0.98) 0%, rgba(26,51,37,0.4) 70%, transparent 100%); }
+.proy-label {
+  display: inline-block; margin-bottom: 8px;
+  background: var(--gold); color: var(--forest);
+  font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 1px;
+}
+.proy-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--white); font-weight: 400; }
+.proy-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+
+/* ── LOTES ── */
+#lotes { background: var(--cream); }
+.lotes-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+.lotes-header h2 { color: var(--forest); margin-bottom: 16px; }
+.lotes-header p { color: var(--muted); font-size: 15px; line-height: 1.8; }
+.lotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.lote-card {
+  background: var(--white); padding: 56px 48px;
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.lote-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(26,51,37,0.12); }
+.lote-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold); }
+.lote-card::after {
+  content: ''; position: absolute;
+  top: -60px; right: -60px; width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.lote-icon {
+  width: 56px; height: 56px; background: var(--gold-pale);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: var(--gold); margin-bottom: 28px;
+}
+.lote-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 500; color: var(--forest); margin-bottom: 8px; }
+.lote-card .lote-desc { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 32px; }
+.lote-features { list-style: none; margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lote-features li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--charcoal); font-weight: 400; }
+.lote-features li i { color: var(--gold); font-size: 13px; flex-shrink: 0; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--forest); color: var(--white);
+  padding: 14px 28px; border-radius: 2px;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.05em;
+  text-decoration: none; text-transform: uppercase; transition: all 0.3s;
+}
+.btn-wa:hover { background: var(--forest-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,51,37,0.3); }
+.btn-wa i { font-size: 16px; color: #25d366; }
+
+/* ── BENEFICIOS ── */
+#beneficios {
+  background: var(--white);
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.bene-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: center; }
+.bene-left h2 { color: var(--forest); margin-bottom: 20px; }
+.bene-left p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 36px; }
+.bene-divider { width: 48px; height: 2px; background: var(--gold); margin-bottom: 36px; }
+.bene-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.bene-item {
+  background: var(--cream); padding: 28px 24px;
+  border-radius: 2px; border: 1px solid rgba(201,168,76,0.15);
+  position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+}
+.bene-item:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(26,51,37,0.08); }
+.bene-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
+.bene-icon {
+  width: 44px; height: 44px; background: var(--forest);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--gold); margin-bottom: 16px;
+}
+.bene-item h4 { font-size: 15px; font-weight: 600; color: var(--forest); margin-bottom: 8px; }
+.bene-item p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── TESTIMONIOS ── */
+#testimonios { background: var(--forest); padding: 100px 8%; }
+.test-header { text-align: center; margin-bottom: 60px; }
+.test-header h2 { color: var(--white); margin-bottom: 12px; }
+.test-header p { color: rgba(255,255,255,0.5); font-size: 15px; }
+.test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.test-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px; padding: 36px 32px; transition: transform 0.3s, background 0.3s;
+}
+.test-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.07); }
+.test-stars { color: var(--gold); font-size: 13px; letter-spacing: 3px; margin-bottom: 20px; }
+.test-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 24px; }
+.test-author { display: flex; align-items: center; gap: 14px; }
+.test-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--gold); display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 600; color: var(--forest); flex-shrink: 0;
+}
+.test-name { font-size: 14px; font-weight: 500; color: var(--white); }
+.test-loc { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── GALERÍA ── */
+#galeria { background: var(--cream); }
+.gal-header { text-align: center; margin-bottom: 48px; }
+.gal-header h2 { color: var(--forest); margin-bottom: 12px; }
+.gal-header p { color: var(--muted); font-size: 15px; }
+.gal-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 220px 220px; gap: 4px;
+  border-radius: 2px; overflow: hidden;
+}
+.gal-item { overflow: hidden; cursor: pointer; position: relative; background: var(--forest-mid); }
+.gal-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.gal-item:hover img { transform: scale(1.08); }
+.gal-item::after {
+  content: '\f065'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+  position: absolute; inset: 0;
+  background: rgba(26,51,37,0.6);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; color: rgba(255,255,255,0.8);
+  opacity: 0; transition: opacity 0.3s;
+}
+.gal-item:hover::after { opacity: 1; }
+
+/* ── UBICACIÓN ── */
+#ubicacion { background: var(--white); }
+.ubic-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; }
+.ubic-info h2 { color: var(--forest); margin-bottom: 20px; }
+.ubic-info p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 32px; }
+.ubic-data { display: flex; flex-direction: column; gap: 16px; }
+.ubic-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px; background: var(--cream);
+  border-radius: 2px; border: 1px solid rgba(201,168,76,0.15);
+}
+.ubic-row i { color: var(--gold); font-size: 18px; width: 24px; text-align: center; }
+.ubic-row div strong { display: block; font-size: 14px; font-weight: 600; color: var(--forest); }
+.ubic-row div span { font-size: 12px; color: var(--muted); }
+.map-placeholder { height: 420px; border-radius: 2px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); position: relative; }
+.map-placeholder iframe { width: 100%; height: 100%; border: 0; display: block; }
+.map-overlay {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+  background: linear-gradient(135deg, rgba(26,51,37,0.92), rgba(37,77,56,0.85));
+  color: var(--white);
+}
+.map-overlay i { font-size: 48px; color: var(--gold); }
+.map-overlay h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; }
+.map-overlay p { font-size: 13px; color: rgba(255,255,255,0.6); }
+.map-overlay a {
+  margin-top: 8px;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold); color: var(--forest);
+  padding: 12px 24px; border-radius: 2px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; transition: background 0.3s;
+}
+.map-overlay a:hover { background: var(--gold-light); }
+
+/* ── CONTACTO ── */
+#contacto { background: var(--forest); text-align: center; padding: 120px 8%; position: relative; overflow: hidden; }
+#contacto::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 65%);
+}
+.contacto-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+#contacto h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); color: var(--white); margin-bottom: 20px; }
+#contacto h2 em { color: var(--gold-light); }
+#contacto p { color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.8; margin-bottom: 48px; }
+.wa-btn-big {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: #25d366; color: var(--white);
+  padding: 20px 44px; border-radius: 2px;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  text-decoration: none; transition: all 0.3s;
+  box-shadow: 0 12px 40px rgba(37,211,102,0.3);
+}
+.wa-btn-big:hover { background: #1fbe5a; transform: translateY(-3px); box-shadow: 0 18px 50px rgba(37,211,102,0.4); }
+.wa-btn-big i { font-size: 22px; }
+.contacto-note { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.35); }
+
+/* ── FOOTER ── */
+footer { background: #0f1e16; padding: 48px 8% 32px; border-top: 1px solid rgba(201,168,76,0.12); }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-brand .logo-text strong { font-size: 20px; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 280px; margin-top: 12px; }
+.footer-links h5 { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { text-decoration: none; font-size: 13px; color: rgba(255,255,255,0.5); transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold-light); }
+.footer-contact h5 { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.footer-contact a { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 10px; transition: color 0.3s; }
+.footer-contact a:hover { color: var(--gold-light); }
+.footer-contact a i { color: var(--gold); width: 16px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
+.footer-gold { color: var(--gold); }
+
+/* ── WHATSAPP FLOTANTE ── */
+.wa-float {
+  position: fixed; bottom: 32px; right: 32px; z-index: 9999;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #25d366; display: flex; align-items: center; justify-content: center;
+  font-size: 28px; color: var(--white); text-decoration: none;
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: waPulse 2.5s ease-in-out infinite;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 14px 40px rgba(37,211,102,0.6); animation: none; }
+.wa-tooltip {
+  position: absolute; right: 72px; top: 50%; transform: translateY(-50%);
+  background: var(--forest); color: var(--white);
+  padding: 8px 14px; border-radius: 4px;
+  font-size: 12px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.wa-tooltip::after {
+  content: ''; position: absolute; left: 100%; top: 50%; transform: translateY(-50%);
+  border: 6px solid transparent; border-left-color: var(--forest);
+}
+.wa-float:hover .wa-tooltip { opacity: 1; }
+
+/* ── ANIMACIONES ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 8px 30px rgba(37,211,102,0.5), 0 0 0 16px rgba(37,211,102,0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .nosotros-grid, .bene-layout, .ubic-layout { grid-template-columns: 1fr; gap: 48px; }
+  .nosotros-badge { bottom: -20px; right: 20px; }
+  .proy-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; }
+  .proy-grid .proy-card:first-child { grid-column: span 2; }
+  .gal-grid { grid-template-columns: repeat(2,1fr); }
+  .gal-item:nth-child(1) { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  section { padding: 72px 5%; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-stats { display: none; }
+  .hero-scroll { display: none; }
+  .lotes-grid { grid-template-columns: 1fr; }
+  .lote-card { padding: 40px 28px; }
+  .lote-features { grid-template-columns: 1fr; }
+  .test-grid { grid-template-columns: 1fr; }
+  .gal-grid { grid-template-rows: 180px 180px; }
+  .proy-grid { height: auto; grid-template-columns: 1fr; grid-template-rows: 220px 220px 220px; }
+  .proy-grid .proy-card:first-child { grid-column: 1; }
+  .footer-top { flex-direction: column; }
+  .wa-float { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 24px; }
+  .bene-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="logo-emblem">V</div>
+    <div class="logo-text">
+      <strong>Valle San Cayetano</strong>
+      <span>Inmobiliaria · Colombia</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#lotes">Proyectos</a></li>
+    <li><a href="#beneficios">Beneficios</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="https://wa.me/573204629190" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> Cotizar</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#nosotros" onclick="closeMenu()">Nosotros</a>
+  <a href="#lotes" onclick="closeMenu()">Proyectos</a>
+  <a href="#beneficios" onclick="closeMenu()">Beneficios</a>
+  <a href="#galeria" onclick="closeMenu()">Galería</a>
+  <a href="#ubicacion" onclick="closeMenu()">Ubicación</a>
+  <a href="https://wa.me/573204629190" target="_blank" style="color:#25d366;font-weight:600;"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><i class="fas fa-seedling"></i> Proyecto Inmobiliario · Norte de Santander</div>
+    <h1>Invierte en tu futuro<br>en <em>Valle San<br>Cayetano</em></h1>
+    <p class="hero-sub">Lotes con alta valorización a solo 12 km de Cúcuta. Espacios únicos entre naturaleza y desarrollo estratégico cerca del Río Zulia.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/573204629190?text=Hola,%20quiero%20cotizar%20un%20lote%20en%20Valle%20San%20Cayetano" target="_blank" class="btn-primary">
+        <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+      </a>
+      <a href="#lotes" class="btn-outline"><i class="fas fa-map-marked-alt"></i> Ver Proyectos</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">12<small style="font-size:1.5rem">km</small></div>
+      <div class="stat-label">de Cúcuta</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100<small style="font-size:1.5rem">%</small></div>
+      <div class="stat-label">Documentación al día</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Tipos de lotes</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <div class="scroll-text">Scroll</div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="nosotros-grid">
+    <div class="nosotros-visual reveal">
+      <div class="nosotros-img"></div>
+      <div class="nosotros-badge">
+        <strong>+12</strong>
+        <span>Años de experiencia</span>
+      </div>
+    </div>
+    <div class="nosotros-text reveal">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Un proyecto construido sobre confianza y visión</h2>
+      <p>Somos un proyecto inmobiliario enfocado en brindar bienestar y seguridad patrimonial. Nos especializamos en terrenos con alta valorización en San Cayetano, ofreciendo espacios ideales para vivienda o descanso con servicios básicos y documentación al día.</p>
+      <p>Cada lote que comercializamos cumple con los más altos estándares legales y urbanísticos, garantizando tranquilidad y crecimiento patrimonial para nuestros clientes.</p>
+      <div class="nosotros-features">
+        <div class="feat"><i class="fas fa-check-circle"></i> Escrituras al día</div>
+        <div class="feat"><i class="fas fa-check-circle"></i> Asesoría legal</div>
+        <div class="feat"><i class="fas fa-check-circle"></i> Pagos flexibles</div>
+        <div class="feat"><i class="fas fa-check-circle"></i> Entrega inmediata</div>
+        <div class="feat"><i class="fas fa-check-circle"></i> Servicios completos</div>
+        <div class="feat"><i class="fas fa-check-circle"></i> Soporte posventa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="proyectos-inner">
+    <div class="proyectos-header reveal">
+      <div>
+        <div class="section-tag" style="color:var(--gold-light)">Ubicación Privilegiada</div>
+        <h2>Naturaleza y desarrollo en perfecta armonía</h2>
+      </div>
+      <p>Invierte en una ubicación privilegiada cerca del Río Zulia y la Refinería, combinando desarrollo estratégico y frescura natural en un entorno inigualable.</p>
+    </div>
+    <div class="proy-grid reveal">
+      <div class="proy-card">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&q=80" alt="Valle San Cayetano">
+        <div class="proy-overlay">
+          <span class="proy-label">Destacado</span>
+          <div class="proy-title">Valle San Cayetano</div>
+          <div class="proy-sub">Vista panorámica · Lotes en venta</div>
+        </div>
+      </div>
+      <div class="proy-card">
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" alt="Naturaleza">
+        <div class="proy-overlay">
+          <span class="proy-label">Cabañas</span>
+          <div class="proy-title">Zona Rural</div>
+          <div class="proy-sub">Entorno natural único</div>
+        </div>
+      </div>
+      <div class="proy-card">
+        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=600&q=80" alt="Urbanización">
+        <div class="proy-overlay">
+          <span class="proy-label">Urbano</span>
+          <div class="proy-title">Zona Urbana</div>
+          <div class="proy-sub">Servicios completos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOTES -->
+<section id="lotes">
+  <div class="lotes-header reveal">
+    <div class="section-tag">Tipos de Lotes</div>
+    <h2>Elige el espacio ideal para tu inversión</h2>
+    <p>Dos modalidades pensadas para diferentes sueños, con los mismos estándares de calidad y seguridad jurídica.</p>
+  </div>
+  <div class="lotes-grid">
+    <div class="lote-card reveal">
+      <div class="lote-icon"><i class="fas fa-home"></i></div>
+      <h3>Lotes para Cabañas</h3>
+      <p class="lote-desc">El retiro perfecto en la naturaleza. Diseña tu cabaña ideal con todos los servicios esenciales, rodeado de paisajes únicos en San Cayetano.</p>
+      <ul class="lote-features">
+        <li><i class="fas fa-tint"></i> Agua potable</li>
+        <li><i class="fas fa-toilet"></i> Fosa séptica</li>
+        <li><i class="fas fa-bolt"></i> Energía eléctrica</li>
+        <li><i class="fas fa-fire"></i> Gas domiciliario</li>
+        <li><i class="fas fa-file-contract"></i> Escrituras al día</li>
+        <li><i class="fas fa-tree"></i> Entorno natural</li>
+      </ul>
+      <a href="https://wa.me/573204629190?text=Hola,%20me%20interesa%20un%20lote%20para%20cabaña%20en%20Valle%20San%20Cayetano" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Solicitar información
+      </a>
+    </div>
+    <div class="lote-card reveal">
+      <div class="lote-icon"><i class="fas fa-city"></i></div>
+      <h3>Lotes para Vivienda Urbana</h3>
+      <p class="lote-desc">Construye tu hogar en un entorno moderno y bien dotado. Infraestructura completa para garantizar tu calidad de vida y plusvalía.</p>
+      <ul class="lote-features">
+        <li><i class="fas fa-tint"></i> Agua potable</li>
+        <li><i class="fas fa-water"></i> Alcantarillado</li>
+        <li><i class="fas fa-bolt"></i> Energía eléctrica</li>
+        <li><i class="fas fa-fire"></i> Gas domiciliario</li>
+        <li><i class="fas fa-file-contract"></i> Escrituras al día</li>
+        <li><i class="fas fa-road"></i> Vías de acceso</li>
+      </ul>
+      <a href="https://wa.me/573204629190?text=Hola,%20me%20interesa%20un%20lote%20para%20vivienda%20urbana%20en%20Valle%20San%20Cayetano" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> Solicitar información
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="bene-layout">
+    <div class="bene-left reveal">
+      <div class="section-tag">¿Por qué elegirnos?</div>
+      <h2>Razones para invertir en Valle San Cayetano</h2>
+      <div class="bene-divider"></div>
+      <p>Nuestros lotes combinan lo mejor de la naturaleza con el acceso al desarrollo urbano, ofreciendo una oportunidad única de inversión con seguridad patrimonial garantizada.</p>
+      <a href="https://wa.me/573204629190" target="_blank" class="btn-primary" style="font-size:13px;padding:14px 28px;">
+        <i class="fab fa-whatsapp"></i> Hablar con un asesor
+      </a>
+    </div>
+    <div class="bene-grid reveal">
+      <div class="bene-item">
+        <div class="bene-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>Alta Valorización</h4>
+        <p>Zona en constante crecimiento con una de las valorizaciones más altas de la región.</p>
+      </div>
+      <div class="bene-item">
+        <div class="bene-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h4>Ubicación Estratégica</h4>
+        <p>A solo 12 km de Cúcuta, con acceso fácil y cercanía a la Refinería y el Río Zulia.</p>
+      </div>
+      <div class="bene-item">
+        <div class="bene-icon"><i class="fas fa-leaf"></i></div>
+        <h4>Entorno Natural</h4>
+        <p>Paisajes únicos y clima agradable que hacen de cada lote un lugar privilegiado.</p>
+      </div>
+      <div class="bene-item">
+        <div class="bene-icon"><i class="fas fa-plug"></i></div>
+        <h4>Servicios Incluidos</h4>
+        <p>Todos los servicios básicos disponibles: agua, energía, gas y más.</p>
+      </div>
+      <div class="bene-item">
+        <div class="bene-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Seguridad Jurídica</h4>
+        <p>Documentación 100% al día, escrituras limpias y asesoría legal incluida.</p>
+      </div>
+      <div class="bene-item">
+        <div class="bene-icon"><i class="fas fa-hand-holding-usd"></i></div>
+        <h4>Facilidad de Compra</h4>
+        <p>Planes de pago flexibles adaptados a tu capacidad de inversión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="test-header reveal">
+    <div class="section-tag" style="color:var(--gold-light);justify-content:center;">
+      <span style="display:block;width:28px;height:1px;background:var(--gold);margin-right:8px;"></span>
+      Testimonios
+    </div>
+    <h2>Lo que dicen nuestros clientes</h2>
+    <p>Más de 200 familias ya confían en Valle San Cayetano</p>
+  </div>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-quote">"Compré mi lote hace dos años y la valorización ha sido increíble. Trámites rápidos, documentación impecable. La mejor decisión de mi vida."</p>
+      <div class="test-author">
+        <div class="test-avatar">C</div>
+        <div>
+          <div class="test-name">Carlos Mendoza</div>
+          <div class="test-loc">Cúcuta, Norte de Santander</div>
+        </div>
+      </div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-quote">"El equipo fue muy profesional en todo momento. Mi cabaña ya está construida y el ambiente es espectacular. ¡Totalmente recomendado!"</p>
+      <div class="test-author">
+        <div class="test-avatar">M</div>
+        <div>
+          <div class="test-name">María Fernanda Ruíz</div>
+          <div class="test-loc">Bogotá, Colombia</div>
+        </div>
+      </div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-quote">"Buscaba una inversión segura y Valle San Cayetano superó mis expectativas. La ubicación es perfecta y la atención fue excepcional."</p>
+      <div class="test-author">
+        <div class="test-avatar">J</div>
+        <div>
+          <div class="test-name">Jorge Alberto Díaz</div>
+          <div class="test-loc">Pamplona, Norte de Santander</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="gal-header reveal">
+    <div class="section-tag">Galería</div>
+    <h2>Conoce el proyecto</h2>
+    <p>Paisajes naturales, terrenos y el entorno único de Valle San Cayetano</p>
+  </div>
+  <div class="gal-grid reveal">
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&q=80" alt="Valle panorámico">
+    </div>
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=600&q=80" alt="Urbanización">
+    </div>
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" alt="Naturaleza">
+    </div>
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&q=80" alt="Paisaje verde">
+    </div>
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Montañas">
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion">
+  <div class="ubic-layout">
+    <div class="ubic-info reveal">
+      <div class="section-tag">Ubicación</div>
+      <h2>Estratégicamente ubicado en San Cayetano</h2>
+      <p>A solo 12 km de Cúcuta, en el municipio de San Cayetano, Norte de Santander. Una ubicación que combina la tranquilidad del campo con el acceso a todos los servicios de la ciudad.</p>
+      <div class="ubic-data">
+        <div class="ubic-row">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>San Cayetano, Norte de Santander</strong>
+            <span>A 12 km del centro de Cúcuta</span>
+          </div>
+        </div>
+        <div class="ubic-row">
+          <i class="fas fa-car"></i>
+          <div>
+            <strong>15 minutos en carro</strong>
+            <span>Acceso por vía principal pavimentada</span>
+          </div>
+        </div>
+        <div class="ubic-row">
+          <i class="fas fa-industry"></i>
+          <div>
+            <strong>Cerca de la Refinería y Río Zulia</strong>
+            <span>Zona de alto potencial de desarrollo</span>
+          </div>
+        </div>
+        <div class="ubic-row">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <strong><a href="https://wa.me/573204629190" target="_blank" style="color:var(--forest);text-decoration:none;">+57 320 462 9190</a></strong>
+            <span>Solicita visita guiada al proyecto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-placeholder reveal">
+      <div class="map-overlay">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>Valle San Cayetano</h3>
+        <p>San Cayetano · Norte de Santander · Colombia</p>
+        <a href="https://wa.me/573204629190?text=Quiero%20agendar%20una%20visita%20al%20proyecto%20Valle%20San%20Cayetano" target="_blank">
+          <i class="fas fa-calendar-check"></i> Agendar Visita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner reveal">
+    <div class="section-tag" style="color:var(--gold-light);justify-content:center;margin-bottom:16px;">
+      <span style="width:28px;height:1px;background:var(--gold);display:block;"></span>
+      Contáctanos
+    </div>
+    <h2>¿Listo para <em>invertir</em><br>en tu futuro?</h2>
+    <p>¿Tienes dudas o deseas una cotización? Nuestros asesores están listos para atenderte de manera personalizada y sin compromiso.</p>
+    <a href="https://wa.me/573204629190?text=Hola,%20me%20interesa%20invertir%20en%20Valle%20San%20Cayetano.%20¿Podrían%20brindarme%20más%20información?" target="_blank" class="wa-btn-big">
+      <i class="fab fa-whatsapp"></i> Escribir por WhatsApp ahora
+    </a>
+    <p class="contacto-note">Horario de atención: Lunes a sábado · 8:00 am – 6:00 pm</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="logo-emblem">V</div>
+        <div class="logo-text">
+          <strong>Valle San Cayetano</strong>
+          <span>Inmobiliaria · Colombia</span>
+        </div>
+      </div>
+      <p>Especialistas en terrenos con alta valorización en San Cayetano, Norte de Santander. Inversión segura, naturaleza única.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="#nosotros">Sobre Nosotros</a></li>
+        <li><a href="#lotes">Tipos de Lotes</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h5>Contacto</h5>
+      <a href="https://wa.me/573204629190" target="_blank"><i class="fab fa-whatsapp"></i> +57 320 462 9190</a>
+      <a href="#ubicacion"><i class="fas fa-map-marker-alt"></i> San Cayetano, N. de Santander</a>
+      <a href="#ubicacion"><i class="fas fa-car"></i> 12 km de Cúcuta</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span class="footer-gold">Valle San Cayetano</span>. Todos los derechos reservados.</p>
+    <p style="font-size:11px;color:rgba(255,255,255,0.2);">Diseño web profesional · Inversión inmobiliaria Colombia</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/573204629190?text=Hola,%20me%20interesa%20información%20sobre%20Valle%20San%20Cayetano" target="_blank" class="wa-float" title="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <div class="wa-tooltip">Chatea con nosotros</div>
+</a>
+
+<script>
+/* ========================================
+   VALLE SAN CAYETANO — Scripts principales
+   ======================================== */
+
+// ── NAV: efecto al hacer scroll ──
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── MENÚ HAMBURGUESA ──
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ── SCROLL REVEAL (animaciones al entrar en pantalla) ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+      const delay = siblings.indexOf(entry.target) * 80;
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => observer.observe(el));
+
+</script>
+</body>
+</html>
